@@ -122,7 +122,9 @@ class Server(object):
     def attach_user(self, name, id, real_name, tz):
         self.users.append(User(self, name, id, real_name, tz))
 
-    def attach_channel(self, name, id, members=[]):
+    def attach_channel(self, name, id, members=None):
+        if members is None:
+            members = []
         self.channels.append(Channel(self, name, id, members))
 
     def join_channel(self, name):

@@ -1,5 +1,7 @@
 class Channel(object):
-    def __init__(self, server, name, id, members=[]):
+    def __init__(self, server, name, id, members=None):
+        if members is None:
+            members = []
         self.server = server
         self.name = name
         self.id = id
